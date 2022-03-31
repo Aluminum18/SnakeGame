@@ -17,6 +17,7 @@ public class SnakeBodySpawner : MonoBehaviour
     public void SpawnNewBody(object[] args)
     {
         var newBodyObj = _bodyObjectSpawner.SpawnAndReturnObject();
+        newBodyObj.name = "Body";
         var newChainedMoving = newBodyObj.GetComponent<SnakePropertiesHolder>().ChainedMoving;
 
         newChainedMoving.SetFront(_chainedMoving);

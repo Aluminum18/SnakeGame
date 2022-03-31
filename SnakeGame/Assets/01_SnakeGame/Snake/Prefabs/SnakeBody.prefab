@@ -7,6 +7,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 154343038101945436, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 154343038101945436, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 154343038101945436, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 154343038101945436, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109647106942037329, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414098257844163564, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622712724386709878, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622712724660101831, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622712725439532786, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622712725575641336, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: _isHeadNode
       value: 0
@@ -14,6 +54,10 @@ PrefabInstance:
     - target: {fileID: 4622712726081546664, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: m_Name
       value: SnakeBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622712726081546664, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4622712726081546665, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: m_RootOrder
@@ -60,6 +104,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4622712726153244742, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622712726153244742, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -67,5 +115,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 730425738840363990, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}

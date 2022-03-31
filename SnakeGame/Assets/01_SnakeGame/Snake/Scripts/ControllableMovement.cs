@@ -6,9 +6,11 @@ using UnityEngine;
 
 public class ControllableMovement : MonoBehaviour
 {
-    [Header("Reference")]
+    [Header("Reference - Read")]
     [SerializeField]
     private Vector3Variable _direction;
+    [SerializeField]
+    private FloatVariable _refDeltaTime;
 
     [Header("Config")]
     [SerializeField]
@@ -58,7 +60,7 @@ public class ControllableMovement : MonoBehaviour
                 _isRotating = false;
                 return;
             }
-            _movedTransform.rotation = Quaternion.RotateTowards(_movedTransform.rotation, rotateTo, _rotateSpeed * Time.deltaTime);
+            _movedTransform.rotation = Quaternion.RotateTowards(_movedTransform.rotation, rotateTo, _rotateSpeed * _refDeltaTime.Value);
         });
     }
 
@@ -76,7 +78,7 @@ public class ControllableMovement : MonoBehaviour
     {
         _movingStream = Observable.EveryUpdate().Subscribe(_ =>
         {
-            _movedTransform.position += _movedTransform.forward * _speed * Time.deltaTime;
+            _movedTransform.position += _movedTransform.forward * _speed * _refDeltaTime.Value;
         });
     }
 
