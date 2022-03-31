@@ -22,8 +22,6 @@ public class ControllableMovement : MonoBehaviour
     [SerializeField]
     private bool _isRotating = false;
 
-    private Queue<Quaternion> _rotateToQueue = new Queue<Quaternion>();
-
     private IDisposable _movingStream;
     private IDisposable _rotatingStream;
 
@@ -43,8 +41,6 @@ public class ControllableMovement : MonoBehaviour
         {
             return;
         }
-
-        //_rotateToQueue.Enqueue(Quaternion.LookRotation(direction));
 
         if (_isRotating)
         {

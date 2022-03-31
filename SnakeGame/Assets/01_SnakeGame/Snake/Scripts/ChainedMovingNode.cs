@@ -10,6 +10,8 @@ public class ChainedMovingNode : MonoBehaviour
     [SerializeField]
     private Transform _movedTransform;
     [SerializeField]
+    private bool _isHeadNode = false;
+    [SerializeField]
     private float _distanceWithFront = 0.2f;
     [SerializeField]
     private int _maxHistorySize = 1000;
@@ -35,21 +37,11 @@ public class ChainedMovingNode : MonoBehaviour
 
     public void StartMoving()
     {
-        _movingStream = Observable.EveryFixedUpdate().Subscribe(_ =>
+        _movingStream = Observable.EveryUpdate().Subscribe(_ =>
         {
             if (_front == null)
             {
-                float deltaDisplacement = Vector3.Distance(_lastPos, _movedTransform.position);
-                if (deltaDisplacement < float.Epsilon)
-                {
-                    return;
-                }
-
-                _displacement += Vector3.Distance(_lastPos, _movedTransform.position);
-                _lastPos = _movedTransform.position;
-                var currentNode = new TransformHistoryNodeValue(_movedTransform.position, _movedTransform.rotation, _displacement);
-
-                RecordTranformHistory(new LinkedListNode<TransformHistoryNodeValue>(currentNode));
+                RecordNewTransformHistory();
                 return;
             }
 
@@ -69,20 +61,44 @@ public class ChainedMovingNode : MonoBehaviour
 
     public void SetFront(ChainedMovingNode front)
     {
-        if (_front == null)
+        if (front == null)
         {
             return;
         }
 
         _front = front;
-        _frontMoveHistory = _front.TransformHistory;
 
-        _transformHistory.Clear();
+        _transformHistory = front.TransformHistory;
+        front.ResetTransformHistory();
+
+        _frontMoveHistory = front.TransformHistory;
+
+        SetInitPos();
     }
 
     public void SetBack(ChainedMovingNode back)
     {
         _back = back;
+    }
+
+    public void ResetTransformHistory()
+    {
+        _transformHistory = new LinkedList<TransformHistoryNodeValue>();
+    }
+
+    private void RecordNewTransformHistory()
+    {
+        float deltaDisplacement = Vector3.Distance(_lastPos, _movedTransform.position);
+        if (deltaDisplacement < float.Epsilon)
+        {
+            return;
+        }
+
+        _displacement += Vector3.Distance(_lastPos, _movedTransform.position);
+        _lastPos = _movedTransform.position;
+        var currentNode = new TransformHistoryNodeValue(_movedTransform.position, _movedTransform.rotation, _displacement);
+
+        AddHistoryNode(new LinkedListNode<TransformHistoryNodeValue>(currentNode));
     }
 
     private void MoveByFollowingFront()
@@ -106,22 +122,22 @@ public class ChainedMovingNode : MonoBehaviour
         LinkedListNode<TransformHistoryNodeValue> nextNodeToMove;
         TransformHistoryNodeValue nextNodeToMoveValue;
 
-        //do
-        {
-            nextNodeToMove = _frontMoveHistory.Last;
-            _frontMoveHistory.RemoveLast();
-            nextNodeToMoveValue = nextNodeToMove.Value;
-            RecordTranformHistory(nextNodeToMove);
-        }
-        //while (_front.Displacement - nextNodeToMoveValue.Displacement > _distanceWithFront);
-        
+        nextNodeToMove = _frontMoveHistory.Last;
+        _frontMoveHistory.RemoveLast();
+        nextNodeToMoveValue = nextNodeToMove.Value;
+        AddHistoryNode(nextNodeToMove);
+
+        MoveToNode(nextNodeToMoveValue);
+    }
+
+    private void MoveToNode(TransformHistoryNodeValue nextNodeToMoveValue)
+    {
         _movedTransform.position = nextNodeToMoveValue.Position;
         _movedTransform.rotation = nextNodeToMoveValue.Rotation;
         _displacement = nextNodeToMoveValue.Displacement;
-
     }
 
-    private void RecordTranformHistory(LinkedListNode<TransformHistoryNodeValue> node)
+    private void AddHistoryNode(LinkedListNode<TransformHistoryNodeValue> node)
     {
         _transformHistory.AddFirst(node);
 
@@ -131,12 +147,33 @@ public class ChainedMovingNode : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void SetInitPos()
+    {
+        var history = _transformHistory.First;
+
+        while (history != null)
+        {
+            var historyValue = history.Value;
+            if (_front.Displacement - historyValue.Displacement < _distanceWithFront)
+            {
+                history = history.Next;
+                continue;
+            }
+
+            MoveToNode(historyValue);
+            break;
+        }
+    }
+
+
+    private void OnEnable()
     {
         _lastPos = _movedTransform.position;
 
-        SetFront(_front);
-        StartMoving();
+        if (_isHeadNode)
+        {
+            StartMoving();
+        }
     }
 
     private void OnDisable()
