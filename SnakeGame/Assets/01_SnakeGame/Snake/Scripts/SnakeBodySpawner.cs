@@ -7,8 +7,9 @@ public class SnakeBodySpawner : MonoBehaviour
     [Header("Config")]
     [SerializeField]
     private ObjectSpawner _bodyObjectSpawner;
+
     [SerializeField]
-    private ChainedMovingNode _chainedMoving;
+    private SnakePropertiesHolder _currentSnakeTail;
 
     [Header("Events in")]
     [SerializeField]
@@ -17,13 +18,13 @@ public class SnakeBodySpawner : MonoBehaviour
     public void SpawnNewBody(object[] args)
     {
         var newBodyObj = _bodyObjectSpawner.SpawnAndReturnObject();
-        newBodyObj.name = "Body";
-        var newChainedMoving = newBodyObj.GetComponent<SnakePropertiesHolder>().ChainedMoving;
+        SnakePropertiesHolder newBodyProperties = newBodyObj.GetComponent<SnakePropertiesHolder>();
+        ChainedMovingNode newBodyChainedMoving = newBodyProperties.ChainedMoving;
 
-        newChainedMoving.SetFront(_chainedMoving);
-        newChainedMoving.StartMoving();
+        newBodyChainedMoving.SetFront(_currentSnakeTail.ChainedMoving);
+        newBodyChainedMoving.StartMoving();
 
-        _onGotFood.Unsubcribe(SpawnNewBody);
+        _currentSnakeTail = newBodyProperties;
     }
 
     private void OnEnable()

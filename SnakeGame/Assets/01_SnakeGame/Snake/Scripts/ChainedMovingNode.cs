@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChainedMovingNode : MonoBehaviour
 {
@@ -22,12 +23,18 @@ public class ChainedMovingNode : MonoBehaviour
     [SerializeField]
     private ChainedMovingNode _back;
 
+    [Header("Unity Events")]
+    [SerializeField]
+    private UnityEvent _onScaleChanged;
+
     [Header("Inspec")]
     [SerializeField]
     private float _displacement = 0f;
     public float Displacement => _displacement;
     [SerializeField]
     private Vector3 _lastPos;
+
+    private Vector3 _originScale;
 
     private LinkedList<TransformHistoryNodeValue> _transformHistory = new LinkedList<TransformHistoryNodeValue>();
     public LinkedList<TransformHistoryNodeValue> TransformHistory => _transformHistory;
@@ -96,7 +103,7 @@ public class ChainedMovingNode : MonoBehaviour
 
         _displacement += Vector3.Distance(_lastPos, _movedTransform.position);
         _lastPos = _movedTransform.position;
-        var currentNode = new TransformHistoryNodeValue(_movedTransform.position, _movedTransform.rotation, _displacement);
+        var currentNode = new TransformHistoryNodeValue(_movedTransform.position, _movedTransform.rotation, _movedTransform.localScale, _displacement);
 
         AddHistoryNode(new LinkedListNode<TransformHistoryNodeValue>(currentNode));
     }
@@ -134,6 +141,12 @@ public class ChainedMovingNode : MonoBehaviour
     {
         _movedTransform.position = nextNodeToMoveValue.Position;
         _movedTransform.rotation = nextNodeToMoveValue.Rotation;
+        _movedTransform.localScale = nextNodeToMoveValue.Scale;
+        if (nextNodeToMoveValue.Scale != _originScale)
+        {
+            _onScaleChanged.Invoke();
+        }
+
         _displacement = nextNodeToMoveValue.Displacement;
     }
 
@@ -169,6 +182,7 @@ public class ChainedMovingNode : MonoBehaviour
     private void OnEnable()
     {
         _lastPos = _movedTransform.position;
+        _originScale = _movedTransform.localScale;
 
         if (_isHeadNode)
         {
@@ -188,13 +202,16 @@ public class TransformHistoryNodeValue
     public Vector3 Position => _position;
     private Quaternion _rotation;
     public Quaternion Rotation => _rotation;
+    private Vector3 _scale;
+    public Vector3 Scale => _scale;
     private float _displacement;
     public float Displacement => _displacement;
 
-    public TransformHistoryNodeValue(Vector3 position, Quaternion rotation, float displacement)
+    public TransformHistoryNodeValue(Vector3 position, Quaternion rotation, Vector3 scale, float displacement)
     {
         _position = position;
         _rotation = rotation;
+        _scale = scale;
         _displacement = displacement;
     }
 }

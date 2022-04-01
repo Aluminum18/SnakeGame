@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1725627548155677753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3118866282893476868}
+  - component: {fileID: 2303579014743109739}
+  m_Layer: 0
+  m_Name: GotFood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3118866282893476868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725627548155677753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8128078613044156513}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2303579014743109739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725627548155677753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa21eca27677614d84f5f12a6ea6688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 723ebc0cc6b3b3442b74bbf9e2a82cdc, type: 2}
+  _handler:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7308760303556355352}
+        m_TargetAssemblyTypeName: LeanTweenAnimation, Assembly-CSharp
+        m_MethodName: DoTween
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2109647106942037329
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +164,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _recentlyContact: {fileID: 0}
---- !u!1 &4414098257844163564
+--- !u!1 &2612912577920870101
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,63 +172,86 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1066985842232570389}
-  - component: {fileID: 5187052125424402637}
-  - component: {fileID: 8998597430397780284}
+  - component: {fileID: 8128078613044156513}
   m_Layer: 0
-  m_Name: BodySpawner
+  m_Name: EventListeners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1066985842232570389
+--- !u!4 &8128078613044156513
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4414098257844163564}
+  m_GameObject: {fileID: 2612912577920870101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3118866282893476868}
   m_Father: {fileID: 4622712725439532787}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5187052125424402637
+--- !u!1 &4605518139589660117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5856824370891743504}
+  - component: {fileID: 7308760303556355352}
+  m_Layer: 0
+  m_Name: GotFoodEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5856824370891743504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4605518139589660117}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4622712724660101832}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7308760303556355352
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4414098257844163564}
+  m_GameObject: {fileID: 4605518139589660117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aa2b3a91a9faef4b9a35362d8de0bd0, type: 3}
+  m_Script: {fileID: 11500000, guid: 71e9d7fcf88f6e44db341ab272ef95cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bodyObjectSpawner: {fileID: 8998597430397780284}
-  _chainedMoving: {fileID: 4622712725575641338}
-  _onGotFood: {fileID: 11400000, guid: 723ebc0cc6b3b3442b74bbf9e2a82cdc, type: 2}
---- !u!114 &8998597430397780284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4414098257844163564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e48ccc59b1b4147ae08ee7001c0c5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectInPool: {fileID: 6011206318634776432, guid: 830e8dbe3dc35794b9b4dedef9fed3f3, type: 3}
-  _randomObjList: []
-  _parrentTransform: {fileID: 0}
-  _spawnPos: {fileID: 0}
-  _randomRangePos: {x: 0, y: 0, z: 0}
-  _poolSize: 5
+  _doTweenOnEnable: 0
+  _go: {fileID: 4622712726081546664}
+  _animType: 2
+  _tweenType: 34
+  _duration: 0.5
+  _useCurrentAsFrom: 0
+  _from: {x: 0.5, y: 0.5, z: 0.5}
+  _to: {x: 0.75, y: 0.75, z: 0.75}
+  _onStartTween:
+    m_PersistentCalls:
+      m_Calls: []
+  _onFinishTween:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4622712724386709878
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +363,7 @@ Transform:
   - {fileID: 4622712724386709879}
   - {fileID: 5874029583028638704}
   - {fileID: 4498099429784875260}
+  - {fileID: 5856824370891743504}
   m_Father: {fileID: 4622712726081546665}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -313,7 +396,7 @@ Transform:
   m_Children:
   - {fileID: 4622712725575641337}
   - {fileID: 4622712726153244743}
-  - {fileID: 1066985842232570389}
+  - {fileID: 8128078613044156513}
   m_Father: {fileID: 4622712726081546665}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -366,6 +449,9 @@ MonoBehaviour:
   _maxHistorySize: 1000
   _front: {fileID: 0}
   _back: {fileID: 0}
+  _onScaleChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _displacement: 0
   _lastPos: {x: 0, y: 0, z: 0}
 --- !u!1 &4622712726081546664
