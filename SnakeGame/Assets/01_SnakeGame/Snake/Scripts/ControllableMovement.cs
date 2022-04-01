@@ -94,7 +94,6 @@ public class ControllableMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        StartMoving();
         _direction.OnValueChange += StartRotating;
     }
 

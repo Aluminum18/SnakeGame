@@ -11,8 +11,6 @@ public class ChainedMovingNode : MonoBehaviour
     [SerializeField]
     private Transform _movedTransform;
     [SerializeField]
-    private bool _isHeadNode = false;
-    [SerializeField]
     private float _distanceWithFront = 0.2f;
     [SerializeField]
     private int _maxHistorySize = 1000;
@@ -183,11 +181,6 @@ public class ChainedMovingNode : MonoBehaviour
     {
         _lastPos = _movedTransform.position;
         _originScale = _movedTransform.localScale;
-
-        if (_isHeadNode)
-        {
-            StartMoving();
-        }
     }
 
     private void OnDisable()
