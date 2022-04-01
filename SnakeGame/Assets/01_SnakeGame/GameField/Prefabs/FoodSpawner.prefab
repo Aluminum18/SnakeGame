@@ -49,7 +49,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3715925866096272917}
         m_TargetAssemblyTypeName: ObjectSpawner, Assembly-CSharp
-        m_MethodName: Spawn
+        m_MethodName: SpawnWithRandomRange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

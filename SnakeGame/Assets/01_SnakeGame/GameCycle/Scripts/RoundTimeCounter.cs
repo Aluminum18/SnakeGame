@@ -35,7 +35,7 @@ public class RoundTimeCounter : MonoBehaviour
                 return;
             }
 
-            _remainTime.Value -= _remainTime.Value;
+            _remainTime.Value -= _refDeltaTime.Value;
         });
     }
 

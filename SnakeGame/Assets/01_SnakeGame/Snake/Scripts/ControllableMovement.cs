@@ -16,7 +16,7 @@ public class ControllableMovement : MonoBehaviour
     [SerializeField]
     private Transform _movedTransform;
     [SerializeField]
-    private float _speed;
+    private FloatVariable _speed;
     [SerializeField]
     private float _rotateSpeed;
 
@@ -78,7 +78,7 @@ public class ControllableMovement : MonoBehaviour
     {
         _movingStream = Observable.EveryUpdate().Subscribe(_ =>
         {
-            _movedTransform.position += _movedTransform.forward * _speed * _refDeltaTime.Value;
+            _movedTransform.position += _movedTransform.forward * _speed.Value * _refDeltaTime.Value;
         });
     }
 
