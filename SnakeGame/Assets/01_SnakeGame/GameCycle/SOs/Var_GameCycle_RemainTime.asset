@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Var_GameCycle_RemainTime
   m_EditorClassIdentifier: 
   Explanation: 
-  _value: 0
-  _defaultValue: 0
-  _valueWhenInit: 0
+  _value: 60
+  _defaultValue: 60
+  _valueWhenInit: 1
