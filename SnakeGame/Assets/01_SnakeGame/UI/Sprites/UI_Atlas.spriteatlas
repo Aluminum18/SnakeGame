@@ -44,7 +44,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: f07a1bc0fcb2161438b799531db46210, type: 3}
-    totalSpriteSurfaceArea: 157086
+    totalSpriteSurfaceArea: 219586
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -52,10 +52,12 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 5246a2f48b2d7cc469d171aba03b7597, type: 3}
   - {fileID: 21300000, guid: 2862a395e1151f34f976548bc2ddbeef, type: 3}
+  - {fileID: 21300000, guid: 82da316848156234b867a8b5e09464a9, type: 3}
   - {fileID: 21300000, guid: 27de228b5a55d5a4890dd0098a900c81, type: 3}
   m_PackedSpriteNamesToIndex:
   - lot patch
   - decor BG
+  - circle
   - btn_ad
   m_RenderDataMap: {}
   m_Tag: UI_Atlas

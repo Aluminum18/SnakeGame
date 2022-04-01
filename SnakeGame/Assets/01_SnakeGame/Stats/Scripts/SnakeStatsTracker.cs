@@ -12,6 +12,8 @@ public class SnakeStatsTracker : MonoBehaviour
     [Header("Reference - Write")]
     [SerializeField]
     private IntegerVariable _currentSnakeLength;
+    [SerializeField]
+    private FloatVariable _targetProgress;
 
     [Header("Unity Events")]
     [SerializeField]
@@ -19,6 +21,8 @@ public class SnakeStatsTracker : MonoBehaviour
 
     private void CheckCurrentLengthAndTarget(int newLength)
     {
+        _targetProgress.Value = (float)newLength / _targetLength.Value;
+
         if (newLength <= _targetLength.Value)
         {
             return;

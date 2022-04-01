@@ -48,4 +48,9 @@ public class RoundTimeCounter : MonoBehaviour
 
         _timerStream.Dispose();
     }
+
+    private void OnDisable()
+    {
+        StopCountTime();
+    }
 }

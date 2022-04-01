@@ -18,6 +18,18 @@ public class FloatVariableToFillImage : MonoBehaviour
 
     private IDisposable _reduceStream;
 
+    public float MaxValue
+    {
+        get
+        {
+            return _maxValue;
+        }
+        set
+        {
+            _maxValue = value;
+        }
+    }
+
     public void AutoReduceFromRefValue()
     {
         _reduceStream?.Dispose();
