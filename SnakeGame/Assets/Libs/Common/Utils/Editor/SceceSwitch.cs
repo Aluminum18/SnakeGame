@@ -6,22 +6,15 @@ using UnityEngine;
 
 public class SceceSwitch : MonoBehaviour
 {
-    private const string SCENE_PATH = "Assets/1_Game/Scenes/";
+    private const string SCENE_PATH = "Assets/01_SnakeGame/Scenes/";
     private const string GAME_FIELD_SCENE = "GameField.unity";
     private const string TITLE_SCENE = "Title.unity";
-    private const string GAME_FIELD_VR_SCENE = "GameFieldVRScene.unity";
     private const string BUFFER_SCENE = "BufferScene.unity";
 
     [MenuItem("ChangeScene/GameField")]
     public static void ToGameFieldScene()
     {
         OpenScene(GAME_FIELD_SCENE);
-    }
-
-    [MenuItem("ChangeScene/GameFieldVr")]
-    public static void ToGameFieldVrScene()
-    {
-        OpenScene(GAME_FIELD_VR_SCENE);
     }
 
     [MenuItem("ChangeScene/Title")]

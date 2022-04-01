@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/01_SnakeGame/Scenes/Title.unity
+    guid: 601dd70e6379121489dff3b6b35c865e
+  - enabled: 1
+    path: Assets/01_SnakeGame/Scenes/GameField.unity
+    guid: 6444bad5a3188c0469b9efa5f5c634ee
+  - enabled: 1
+    path: Assets/01_SnakeGame/Scenes/BufferScene.unity
+    guid: 4f26e5fb3d2be6a44be3b319c55eb3f5
   m_configObjects: {}

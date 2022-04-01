@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6575761538262540027}
   - component: {fileID: 6575761538262540020}
   m_Layer: 0
-  m_Name: ToGameFieldScene
+  m_Name: SceneLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
