@@ -23,7 +23,7 @@ public class ChainedMovingNode : MonoBehaviour
 
     [Header("Unity Events")]
     [SerializeField]
-    private UnityEvent _onScaleChanged;
+    private UnityEvent _onFirstTimeScaleChanged;
 
     [Header("Inspec")]
     [SerializeField]
@@ -135,14 +135,16 @@ public class ChainedMovingNode : MonoBehaviour
         MoveToNode(nextNodeToMoveValue);
     }
 
+    private bool _scaleChanged = false;
     private void MoveToNode(TransformHistoryNodeValue nextNodeToMoveValue)
     {
         _movedTransform.position = nextNodeToMoveValue.Position;
         _movedTransform.rotation = nextNodeToMoveValue.Rotation;
         _movedTransform.localScale = nextNodeToMoveValue.Scale;
-        if (nextNodeToMoveValue.Scale != _originScale)
+        if (nextNodeToMoveValue.Scale.x >= 0.7f && !_scaleChanged)
         {
-            _onScaleChanged.Invoke();
+            _onFirstTimeScaleChanged.Invoke();
+            _scaleChanged = true;
         }
 
         _displacement = nextNodeToMoveValue.Displacement;

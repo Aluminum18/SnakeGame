@@ -7,8 +7,6 @@ public class TweenMaterialProperty : MonoBehaviour
     [SerializeField]
     private Renderer _renderer;
     [SerializeField]
-    private CanvasRenderer _canvasRenderer;
-    [SerializeField]
     private LeanTweenType _tweenType;
     [SerializeField]
     private float _duration = 0.5f;
@@ -39,15 +37,6 @@ public class TweenMaterialProperty : MonoBehaviour
         _tweening = LeanTween.value(current, to, _duration).setEase(_tweenType).setOnUpdate(value =>
         {
             _renderer.material.SetFloat(_targetProps, value);
-        });
-    }
-
-    public void TweenFloatCanvas(float to)
-    {
-        float current = _canvasRenderer.GetMaterial(0).GetFloat(_targetProps);
-        _tweening = LeanTween.value(current, to, _duration).setEase(_tweenType).setOnUpdate(value =>
-        {
-            _canvasRenderer.GetMaterial(0).SetFloat(_targetProps, value);
         });
     }
 
