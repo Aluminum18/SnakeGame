@@ -178,7 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: _onFirstTimeScaleChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: _onScaleChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -213,6 +213,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: _onFirstTimeScaleChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: _firstTimeScaleChange.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -224,6 +228,10 @@ PrefabInstance:
       propertyPath: _onFirstTimeScaleChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 8588519679011979555}
+    - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: _onFirstTimeScaleChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 08e5a4ba1ef82aa40bcbf2cdc7ee429a, type: 2}
     - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: _firstTimeScaleChange.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Spawn
@@ -237,12 +245,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: _onFirstTimeScaleChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: _onFirstTimeScaleChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TweenFloat
       objectReference: {fileID: 0}
     - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: _onFirstTimeScaleChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Spawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: _onFirstTimeScaleChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Raise
       objectReference: {fileID: 0}
     - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: _onScaleChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -261,6 +277,10 @@ PrefabInstance:
       value: ObjectSpawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: _onFirstTimeScaleChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: GameEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: _onScaleChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -274,6 +294,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
       propertyPath: _onFirstTimeScaleChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622712725575641338, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
+      propertyPath: _onFirstTimeScaleChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4622712726081546664, guid: 0cc9940cb8270ae4cb72dfae3289868d, type: 3}
