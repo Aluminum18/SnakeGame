@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Evt_GameCycle_OnMissionSuccess
   m_EditorClassIdentifier: 
   _eventExplanation: 
-  _logWhenRaise: 1
+  _logWhenRaise: 0
   _subcribers: []
