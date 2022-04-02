@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GameConfigs_TargetSnakeLength
   m_EditorClassIdentifier: 
   Explanation: 
-  _value: 20
+  _value: 30
   _defaultValue: 0
   _valueWhenInit: 0

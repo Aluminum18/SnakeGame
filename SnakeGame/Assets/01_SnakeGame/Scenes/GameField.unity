@@ -902,7 +902,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 9.45
-  m_Depth: -2
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -2057,7 +2057,7 @@ Camera:
   field of view: 40
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 961
@@ -2254,7 +2254,7 @@ GameObject:
   - component: {fileID: 1881001249}
   m_Layer: 0
   m_Name: -----Ingame-------
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
